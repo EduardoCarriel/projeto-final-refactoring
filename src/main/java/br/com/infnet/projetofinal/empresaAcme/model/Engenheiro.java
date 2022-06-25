@@ -6,14 +6,16 @@ import java.util.Date;
 
 public class Engenheiro extends Funcionario{
 
-    public String numeroConselho;
+    private String numeroConselho;
 
-    public Engenheiro(Pessoa pessoa, EnumGrupoSanguineo grupoSanguineo, Long tempoDeServicoEmAnos,
-                      Long numeroMatricula) {
-        super(pessoa, grupoSanguineo, tempoDeServicoEmAnos, numeroMatricula);
+    public Engenheiro(Long id, String nome, String sobrenome, EnderecoFuncionario enderecoFuncionario,
+                      EnumGrupoSanguineo grupoSanguineo, Long tempoDeServicoEmAnos, Long numeroMatricula,
+                      String numeroConselho) {
+        super(id, nome, sobrenome, enderecoFuncionario, grupoSanguineo, tempoDeServicoEmAnos, numeroMatricula);
+        this.numeroConselho = numeroConselho;
     }
 
-    public Double calculaBonusEngenheiro() {
+    public Double calcularBonusEngenheiro() {
         return getTempoDeServicoEmAnos() * 3.7;
     }
 

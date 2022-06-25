@@ -7,31 +7,46 @@ import java.util.Map;
 
 public class Vendedor extends Funcionario{
 
+    public Vendedor(Long id, String nome, String sobrenome, EnderecoFuncionario enderecoFuncionario,
+                    EnumGrupoSanguineo grupoSanguineo, Long tempoDeServicoEmAnos, Long numeroMatricula) {
+        super(id, nome, sobrenome, enderecoFuncionario, grupoSanguineo, tempoDeServicoEmAnos, numeroMatricula);
+    }
+
     private Long quantidadeDeVendas;
 
     private Boolean metaBatida;
 
-    public Vendedor(Pessoa pessoa, EnumGrupoSanguineo grupoSanguineo, Long tempoDeServicoEmAnos, Long numeroMatricula) {
-        super(pessoa, grupoSanguineo, tempoDeServicoEmAnos, numeroMatricula);
+    private List<Map<String, Integer>> listaCursos;
+
+    public Long getQuantidadeDeVendas() {
+        return quantidadeDeVendas;
     }
 
-    //Armazena um curso e sua nota;
-    private List<Map<String, Integer>>cursos;
-
-    public List<Map<String, Integer>> getCursos() {
-        return cursos;
+    public void setQuantidadeDeVendas(Long quantidadeDeVendas) {
+        this.quantidadeDeVendas = quantidadeDeVendas;
     }
 
-    public void setCursos(List<Map<String, Integer>> cursos) {
-        this.cursos = cursos;
+    public Boolean getMetaBatida() {
+        return metaBatida;
+    }
+
+    public void setMetaBatida(Boolean metaBatida) {
+        this.metaBatida = metaBatida;
+    }
+
+    public List<Map<String, Integer>> getListaCursos() {
+        return listaCursos;
+    }
+
+    public void setListaCursos(List<Map<String, Integer>> listaCursos) {
+        this.listaCursos = listaCursos;
     }
 
     public boolean isPlatinumEBateuMeta(){
         return (quantidadeDeVendas > 35 && getQuantidadeDeCursos() > 3 && metaBatida);
     }
 
-    private int getQuantidadeDeCursos() {
-        return cursos.size();
+    private Integer getQuantidadeDeCursos() {
+        return listaCursos.size();
     }
-
 }
