@@ -2,7 +2,9 @@ package br.com.infnet.projetofinal.empresaAcme.model;
 
 import br.com.infnet.projetofinal.empresaAcme.enumerator.EnumGrupoSanguineo;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Engenheiro extends Funcionario{
 
@@ -24,7 +26,10 @@ public class Engenheiro extends Funcionario{
     }
 
     public String getNumeroConselho() {
-        return numeroConselho + new Date().getYear();
+
+        Calendar calendario = GregorianCalendar.getInstance();
+
+        return numeroConselho + calendario.get(Calendar.YEAR);
     }
 
     public Boolean engenheiroQualificadoParaTrabalhoFora(){
