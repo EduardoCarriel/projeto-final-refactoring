@@ -1,9 +1,9 @@
 package br.com.infnet.projetofinal.empresaAcme.model;
 
-public abstract class EnderecoPessoa {
+public abstract class EnderecoFuncionario {
 
-    public EnderecoPessoa(String numeroCep, String logradouro, long numeroLogradouro, String complemento,
-                          String bairro, String cidade, String estado) {
+    public EnderecoFuncionario(String numeroCep, String logradouro, long numeroLogradouro, String complemento,
+                               String bairro, String cidade, String estado) {
         this.numeroCep = numeroCep;
         this.logradouro = logradouro;
         this.numeroLogradouro = numeroLogradouro;

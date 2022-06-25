@@ -4,21 +4,39 @@ import br.com.infnet.projetofinal.empresaAcme.enumerator.EnumGrupoSanguineo;
 
 public abstract class Funcionario {
 
-    public Funcionario(Pessoa dadosFuncionario, EnumGrupoSanguineo grupoSanguineo, Long tempoDeServicoEmAnos,
-                       Long numeroMatricula) {
-        this.dadosFuncionario = dadosFuncionario;
+    public Funcionario(Long id, String nome, String sobrenome, EnderecoFuncionario enderecoFuncionario,
+                       EnumGrupoSanguineo grupoSanguineo, Long tempoDeServicoEmAnos, Long numeroMatricula) {
+        this.id = id;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.enderecoFuncionario = enderecoFuncionario;
         this.grupoSanguineo = grupoSanguineo;
         this.tempoDeServicoEmAnos = tempoDeServicoEmAnos;
         this.numeroMatricula = numeroMatricula;
     }
 
-    private Pessoa dadosFuncionario;
+    private Long id;
+    private String nome;
+    private String sobrenome;
+    private EnderecoFuncionario enderecoFuncionario;
     private EnumGrupoSanguineo grupoSanguineo;
     private Long tempoDeServicoEmAnos;
     private Long numeroMatricula;
 
-    public Pessoa getDadosFuncionario() {
-        return dadosFuncionario;
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public EnderecoFuncionario getEnderecoFuncionario() {
+        return enderecoFuncionario;
     }
 
     public EnumGrupoSanguineo getGrupoSanguineo() {
@@ -31,9 +49,5 @@ public abstract class Funcionario {
 
     public Long getNumeroMatricula() {
         return numeroMatricula;
-    }
-
-    public Integer getQuantidadeEmpregadosFabrica(){
-        return 34;
     }
 }
