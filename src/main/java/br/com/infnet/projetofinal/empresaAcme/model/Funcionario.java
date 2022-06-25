@@ -1,4 +1,6 @@
-package br.com.infnet.projetofinal.empresaAcme;
+package br.com.infnet.projetofinal.empresaAcme.model;
+
+import br.com.infnet.projetofinal.empresaAcme.enumerator.EnumGrupoSanguineo;
 
 abstract class Funcionario {
 

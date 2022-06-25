@@ -1,4 +1,4 @@
-package br.com.infnet.projetofinal.empresaAcme;
+package br.com.infnet.projetofinal.empresaAcme.model;
 
 public abstract class Pessoa {
 
