@@ -9,14 +9,14 @@ public class RunnerEngenheiro {
 
     public static void main(String[] args) {
 
-        Engenheiro engenheiro = FichaCadastralEngenheiro();
+        Engenheiro engenheiro = fichaCadastralEngenheiro();
 
-        QualificacaoTecnicaEngenheiro(engenheiro);
+        qualificacaoTecnicaEngenheiro(engenheiro);
 
-        ImprimirDadosEngenheiro(engenheiro);
+        imprimirDadosEngenheiro(engenheiro);
     }
 
-    private static Engenheiro FichaCadastralEngenheiro() {
+    private static Engenheiro fichaCadastralEngenheiro() {
         return new Engenheiro((long) 1,
                         "Luciano",
                      "Keunecke",
@@ -33,7 +33,7 @@ public class RunnerEngenheiro {
                     "ABC102030");
     }
 
-    private static void QualificacaoTecnicaEngenheiro(Engenheiro engenheiro) {
+    private static void qualificacaoTecnicaEngenheiro(Engenheiro engenheiro) {
         engenheiro.setQualificacaoEngenheiro(new QualificacaoEngenheiro(true,
                                                                         8,
                                                                        true,
@@ -41,7 +41,7 @@ public class RunnerEngenheiro {
                                                                      true));
     }
 
-    private static void ImprimirDadosEngenheiro(Engenheiro engenheiro) {
+    private static void imprimirDadosEngenheiro(Engenheiro engenheiro) {
         System.out.println("Número do Conselho: " + engenheiro.getNumeroConselho());
 
         System.out.println("Bônus: " + engenheiro.getBonus());
