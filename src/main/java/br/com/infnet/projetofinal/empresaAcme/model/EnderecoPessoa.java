@@ -1,6 +1,6 @@
 package br.com.infnet.projetofinal.empresaAcme.model;
 
-public class EnderecoPessoa {
+public abstract class EnderecoPessoa {
 
     public EnderecoPessoa(String numeroCep, String logradouro, long numeroLogradouro, String complemento,
                           String bairro, String cidade, String estado) {
@@ -12,6 +12,7 @@ public class EnderecoPessoa {
         this.cidade  = cidade;
         this.estado = estado;
     }
+
     private String numeroCep;
     private String logradouro;
     private long numeroLogradouro;
@@ -19,4 +20,32 @@ public class EnderecoPessoa {
     private String bairro;
     private String cidade;
     private String estado;
+
+    public String getNumeroCep() {
+        return numeroCep;
+    }
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public long getNumeroLogradouro() {
+        return numeroLogradouro;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
 }

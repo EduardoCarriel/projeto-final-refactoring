@@ -2,7 +2,7 @@ package br.com.infnet.projetofinal.empresaAcme.model;
 
 import br.com.infnet.projetofinal.empresaAcme.enumerator.EnumGrupoSanguineo;
 
-abstract class Funcionario {
+public abstract class Funcionario {
 
     public Funcionario(Pessoa pessoa, EnumGrupoSanguineo grupoSanguineo, Long tempoDeServicoEmAnos,
                        Long numeroMatricula) {
@@ -17,11 +17,19 @@ abstract class Funcionario {
     private Long tempoDeServicoEmAnos;
     private Long numeroMatricula;
 
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public EnumGrupoSanguineo getGrupoSanguineo() {
+        return grupoSanguineo;
+    }
+
     public Long getTempoDeServicoEmAnos() {
         return tempoDeServicoEmAnos;
     }
 
-    /*public void setTempoDeServicoEmAnos(Long tempoDeServicoEmAnos) {
-        this.tempoDeServicoEmAnos = tempoDeServicoEmAnos;
-    }*/
+    public Long getNumeroMatricula() {
+        return numeroMatricula;
+    }
 }
