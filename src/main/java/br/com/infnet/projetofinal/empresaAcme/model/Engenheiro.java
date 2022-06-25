@@ -1,7 +1,7 @@
 package br.com.infnet.projetofinal.empresaAcme.model;
 
 import br.com.infnet.projetofinal.empresaAcme.enumerator.EnumGrupoSanguineo;
-import br.com.infnet.projetofinal.util.Utils;
+import br.com.infnet.projetofinal.util.UtilsData;
 
 public class Engenheiro extends Funcionario{
 
@@ -29,7 +29,7 @@ public class Engenheiro extends Funcionario{
     }
 
     public String getNumeroConselho() {
-        return numeroConselho + Utils.retornarAnoAtual();
+        return numeroConselho + UtilsData.retornarAnoAtual();
     }
 
     public String engenheiroEhQualificadoParaTrabalhoFora(){
