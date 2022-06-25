@@ -36,8 +36,8 @@ public class RunnerEngenheiro {
     private static void QualificacaoTecnicaEngenheiro(Engenheiro engenheiro) {
         engenheiro.setQualificacaoEngenheiro(new QualificacaoEngenheiro(true,
                                                                         8,
-                                                                       false,
-                                                                       0,
+                                                                       true,
+                                                                       3,
                                                                      true));
     }
 
