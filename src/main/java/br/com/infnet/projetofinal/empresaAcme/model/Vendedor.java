@@ -2,6 +2,7 @@ package br.com.infnet.projetofinal.empresaAcme.model;
 
 import br.com.infnet.projetofinal.empresaAcme.enumerator.EnumGrupoSanguineo;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -16,7 +17,7 @@ public class Vendedor extends Funcionario{
 
     private Double valorTotalDeVendas;
 
-    private List<Map<String, Integer>> listaDeCursos;
+    private List<Map<String, Integer>> listaDeCursos = new ArrayList<>();
 
     public Long getQuantidadeDeVendas() {
         return quantidadeDeVendas;
@@ -38,8 +39,8 @@ public class Vendedor extends Funcionario{
         return listaDeCursos;
     }
 
-    public void setListaDeCursos(List<Map<String, Integer>> listaDeCursos) {
-        this.listaDeCursos = listaDeCursos;
+    public void setListaDeCursos(Map<String, Integer> listaCursos) {
+        this.listaDeCursos.add(listaCursos);
     }
 
     public boolean getEhPlatinumEBateuMeta(){
@@ -50,7 +51,7 @@ public class Vendedor extends Funcionario{
         return listaDeCursos.size();
     }
 
-    private Boolean getMetaBatida() {
+    public Boolean getMetaBatida() {
         return valorTotalDeVendas > 500.000;
     }
 }
