@@ -3,18 +3,18 @@ package br.com.infnet.projetofinal.empresaAcme;
 import java.util.Date;
 
 public class Engenheiro extends Funcionario{
-    private Long matricula;
 
-    public Engenheiro(int grupoSanguineo) {
-        super(grupoSanguineo);
+    public String numeroConselho;
+
+    public Engenheiro(Pessoa pessoa, EnumGrupoSanguineo grupoSanguineo, Long tempoDeServicoEmAnos,
+                      Long numeroMatricula) {
+        super(pessoa, grupoSanguineo, tempoDeServicoEmAnos, numeroMatricula);
     }
 
-    @Override
     public Double calculaBonusEngenheiro() {
-        return getTempoDeServicoEMAnos() * 3.7;
+        return getTempoDeServicoEmAnos() * 3.7;
     }
 
-    @Override
     public String getNumeroConselho() {
         return numeroConselho + new Date().getYear();
     }
