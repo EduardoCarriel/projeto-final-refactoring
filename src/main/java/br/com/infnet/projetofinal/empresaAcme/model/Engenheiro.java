@@ -8,6 +8,10 @@ public class Engenheiro extends Funcionario{
 
     private String numeroConselho;
 
+    private Integer idade;
+
+    private QualificacaoEngenheiro qualificacaoEngenheiro;
+
     public Engenheiro(Long id, String nome, String sobrenome, EnderecoFuncionario enderecoFuncionario,
                       EnumGrupoSanguineo grupoSanguineo, Long tempoDeServicoEmAnos, Long numeroMatricula,
                       String numeroConselho) {
@@ -23,25 +27,16 @@ public class Engenheiro extends Funcionario{
         return numeroConselho + new Date().getYear();
     }
 
-    public Integer verificaQualificacoesParaTrabalhoFora(Boolean temMestrado, Integer notaMestrado,
-                                         boolean temDoutorado, Integer notaDoutorado, boolean ehMenorDe50Anos,
-                                         boolean fluenteEmIngles){
-        Integer aprovado = -1;
+    public Boolean engenheiroQualificadoParaTrabalhoFora(){
+        return (qualificacaoEngenheiro.ehFluenteEmIngles() && (certificadoMestradoAprovado() || certificadoDoutoradoAprovado()));
+    }
 
-        if (fluenteEmIngles) {
-            if(temMestrado){
-                if(notaMestrado > 7){
-                    aprovado = 1;
-                }
-            }else if(temDoutorado){
-                if(notaDoutorado > 5){
-                    aprovado = 1;
-                }
-            }
-        } else {
+    private boolean certificadoMestradoAprovado() {
+        return (qualificacaoEngenheiro.getTemMestrado() && qualificacaoEngenheiro.getNotaMestrado() > 7);
+    }
 
-        }
-    return aprovado;
+    private boolean certificadoDoutoradoAprovado() {
+        return (qualificacaoEngenheiro.getTemDoutorado() && qualificacaoEngenheiro.getNotaDoutorado() > 5);
     }
 
 }
