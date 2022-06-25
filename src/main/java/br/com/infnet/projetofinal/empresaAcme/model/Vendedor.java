@@ -42,7 +42,7 @@ public class Vendedor extends Funcionario{
         this.listaDeCursos = listaDeCursos;
     }
 
-    public boolean isPlatinumEBateuMeta(){
+    public boolean getEhPlatinumEBateuMeta(){
         return (quantidadeDeVendas > 35 && getQuantidadeDeCursos() > 3 && getMetaBatida());
     }
 
@@ -50,7 +50,7 @@ public class Vendedor extends Funcionario{
         return listaDeCursos.size();
     }
 
-    public Boolean getMetaBatida() {
+    private Boolean getMetaBatida() {
         return valorTotalDeVendas > 500.000;
     }
 }
