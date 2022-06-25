@@ -9,6 +9,8 @@ public class Vendedor extends Funcionario{
 
     private Long quantidadeDeVendas;
 
+    private Boolean metaBatida;
+
     public Vendedor(Pessoa pessoa, EnumGrupoSanguineo grupoSanguineo, Long tempoDeServicoEmAnos, Long numeroMatricula) {
         super(pessoa, grupoSanguineo, tempoDeServicoEmAnos, numeroMatricula);
     }
@@ -24,16 +26,12 @@ public class Vendedor extends Funcionario{
         this.cursos = cursos;
     }
 
-    public boolean isPlatinumEBateuMeta(Boolean metaBatida){
-        boolean isPlatinum = false;
-        int quantidadeDeCursos = cursos.size();
-        if(quantidadeDeVendas > 35 && quantidadeDeCursos > 3 && metaBatida){
-            isPlatinum = true;
-        }
-        return  isPlatinum;
+    public boolean isPlatinumEBateuMeta(){
+        return (quantidadeDeVendas > 35 && getQuantidadeDeCursos() > 3 && metaBatida);
     }
-    public Integer getQuantidadeEmpregadosFabrica(){
-        return 34;
+
+    private int getQuantidadeDeCursos() {
+        return cursos.size();
     }
 
 }
