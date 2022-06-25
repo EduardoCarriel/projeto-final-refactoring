@@ -14,9 +14,9 @@ public class Vendedor extends Funcionario{
 
     private Long quantidadeDeVendas;
 
-    private Boolean metaBatida;
+    private Double valorTotalDeVendas;
 
-    private List<Map<String, Integer>> listaCursos;
+    private List<Map<String, Integer>> listaDeCursos;
 
     public Long getQuantidadeDeVendas() {
         return quantidadeDeVendas;
@@ -26,27 +26,31 @@ public class Vendedor extends Funcionario{
         this.quantidadeDeVendas = quantidadeDeVendas;
     }
 
-    public Boolean getMetaBatida() {
-        return metaBatida;
+    public Double getValorTotalDeVendas() {
+        return valorTotalDeVendas;
     }
 
-    public void setMetaBatida(Boolean metaBatida) {
-        this.metaBatida = metaBatida;
+    public void setValorTotalDeVendas(Double valorTotalDeVendas) {
+        this.valorTotalDeVendas = valorTotalDeVendas;
     }
 
-    public List<Map<String, Integer>> getListaCursos() {
-        return listaCursos;
+    public List<Map<String, Integer>> getListaDeCursos() {
+        return listaDeCursos;
     }
 
-    public void setListaCursos(List<Map<String, Integer>> listaCursos) {
-        this.listaCursos = listaCursos;
+    public void setListaDeCursos(List<Map<String, Integer>> listaDeCursos) {
+        this.listaDeCursos = listaDeCursos;
     }
 
     public boolean isPlatinumEBateuMeta(){
-        return (quantidadeDeVendas > 35 && getQuantidadeDeCursos() > 3 && metaBatida);
+        return (quantidadeDeVendas > 35 && getQuantidadeDeCursos() > 3 && getMetaBatida());
     }
 
     private Integer getQuantidadeDeCursos() {
-        return listaCursos.size();
+        return listaDeCursos.size();
+    }
+
+    public Boolean getMetaBatida() {
+        return valorTotalDeVendas > 500.000;
     }
 }

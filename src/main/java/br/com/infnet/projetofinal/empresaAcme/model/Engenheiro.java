@@ -24,7 +24,7 @@ public class Engenheiro extends Funcionario{
         return numeroConselho + Utils.retornarAnoAtual();
     }
 
-    public Boolean engenheiroQualificadoParaTrabalhoFora(){
+    public Boolean engenheiroEhQualificadoParaTrabalhoFora(){
         return (qualificacaoEngenheiro.ehFluenteEmIngles() && (certificadoMestradoAprovado() || certificadoDoutoradoAprovado()));
     }
 
