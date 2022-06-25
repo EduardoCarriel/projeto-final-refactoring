@@ -16,7 +16,15 @@ public class Engenheiro extends Funcionario{
         this.numeroConselho = numeroConselho;
     }
 
-    public Double calcularBonusEngenheiro() {
+    public QualificacaoEngenheiro getQualificacaoEngenheiro() {
+        return qualificacaoEngenheiro;
+    }
+
+    public void setQualificacaoEngenheiro(QualificacaoEngenheiro qualificacaoEngenheiro) {
+        this.qualificacaoEngenheiro = qualificacaoEngenheiro;
+    }
+
+    public Double getBonus() {
         return getTempoDeServicoEmAnos() * 3.7;
     }
 
@@ -24,8 +32,11 @@ public class Engenheiro extends Funcionario{
         return numeroConselho + Utils.retornarAnoAtual();
     }
 
-    public Boolean engenheiroEhQualificadoParaTrabalhoFora(){
-        return (qualificacaoEngenheiro.ehFluenteEmIngles() && (certificadoMestradoAprovado() || certificadoDoutoradoAprovado()));
+    public String engenheiroEhQualificadoParaTrabalhoFora(){
+        if (qualificacaoEngenheiro.ehFluenteEmIngles() && (certificadoMestradoAprovado() || certificadoDoutoradoAprovado())) {
+            return "Sim";
+        }
+        return "Não";
     }
 
     private boolean certificadoMestradoAprovado() {

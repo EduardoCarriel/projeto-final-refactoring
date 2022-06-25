@@ -1,6 +1,6 @@
 package br.com.infnet.projetofinal.empresaAcme.model;
 
-public abstract class QualificacaoEngenheiro {
+public class QualificacaoEngenheiro {
 
     public QualificacaoEngenheiro(Boolean temMestrado, Integer notaMestrado, boolean temDoutorado, Integer notaDoutorado, boolean ehFluenteEmIngles) {
         this.temMestrado = temMestrado;

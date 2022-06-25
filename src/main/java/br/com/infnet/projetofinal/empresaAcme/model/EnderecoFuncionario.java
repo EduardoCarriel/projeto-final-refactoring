@@ -1,6 +1,6 @@
 package br.com.infnet.projetofinal.empresaAcme.model;
 
-public abstract class EnderecoFuncionario {
+public class EnderecoFuncionario {
 
     public EnderecoFuncionario(String numeroCep, String logradouro, long numeroLogradouro, String complemento,
                                String bairro, String cidade, String estado) {
