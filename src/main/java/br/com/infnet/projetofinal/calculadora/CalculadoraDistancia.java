@@ -1,58 +1,42 @@
 package br.com.infnet.projetofinal.calculadora;
 
-import br.com.infnet.projetofinal.exception.LancarMensagemExcecao;
-
-import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.Locale;
-import java.util.Scanner;
 
 public class CalculadoraDistancia {
     private double x1, x2, y1, y2;
+    private InformacaoConsole informacaoConsole;
 
-    private void informarDados() {
-        Locale.setDefault(Locale.US);
-        Scanner entrada = new Scanner(System.in);
-
-        System.out.println("Digite x1");
-        dadoEntradaEhValido(entrada.next());
-        x1 = entrada.nextDouble();
-
-        System.out.println("Digite y1");
-        dadoEntradaEhValido(entrada.next());
-        y1 = entrada.nextDouble();
-
-        System.out.println("Digite x2");
-        dadoEntradaEhValido(entrada.next());
-        x2 = entrada.nextDouble();
-
-        System.out.println("Digite y2");
-        dadoEntradaEhValido(entrada.next());
-        y2 = entrada.nextDouble();
+    public  CalculadoraDistancia() {
+        this.informacaoConsole = new InformacaoConsole();
     }
 
-    private void dadoEntradaEhValido(String dadoEntrada) {
-        try {
-            Double.parseDouble(dadoEntrada);
-        } catch (RuntimeException ex) {
-            System.out.println("O valor informado não é válido!");
-        }
+    private void solicitarDados() {
+        this.informacaoConsole.exibirMensagem("Digite x1");
+        this.informacaoConsole.solitarInformacao();
+        x1 = this.informacaoConsole.getInformacaoNumerica();
+
+        this.informacaoConsole.exibirMensagem("Digite y1");
+        this.informacaoConsole.solitarInformacao();
+        y1 = this.informacaoConsole.getInformacaoNumerica();
+
+        this.informacaoConsole.exibirMensagem("Digite x2");
+        this.informacaoConsole.solitarInformacao();
+        x2 = this.informacaoConsole.getInformacaoNumerica();
+
+        this.informacaoConsole.exibirMensagem("Digite y2");
+        this.informacaoConsole.solitarInformacao();
+        y2 = this.informacaoConsole.getInformacaoNumerica();
     }
 
     private double calcular(){
         return Math.sqrt(Math.pow(x2 - x1, 2) +  Math.pow((y2 - y1), 2));
     }
 
-    private void imprimirResultado(double resultado) {
-        NumberFormat formatter = new DecimalFormat("#0.0000");
-        System.out.println(formatter.format(resultado));
-    }
-
     public static void main(String[] args) {
         CalculadoraDistancia calculadoraDistancia = new CalculadoraDistancia();
-        calculadoraDistancia.informarDados();
+        calculadoraDistancia.solicitarDados();
         final double resultado = calculadoraDistancia.calcular();
-        calculadoraDistancia.imprimirResultado(resultado);
+        calculadoraDistancia.informacaoConsole.exibirResultado(resultado);
     }
 }
