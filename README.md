@@ -8,4 +8,6 @@ Alunos:
 
 Item de entrega:
 
-- Identificar os Bad Smells e aplicar os princípios de Clean Code enquanto refatorar o código existente.
+- Identificar os Bad Smells e aplicar os princípios de Clean Code enquanto refatorar o código existente:
+ 
+  https://github.com/leonardogloria/projeto-final-refactoring
